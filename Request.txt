@@ -1,0 +1,12 @@
+#Introduction to request module:
+    The requests module allows you to send HTTP requests using Python.
+    The HTTP request returns a Response Object with all the response data (content, encoding, status, etc).
+
+#Function:
+    1.delete(url, args) = Sends a DELETE request to the specified url
+    2.get(url, params, args) = Sends a GET request to the specified url
+    3.head(url, args) = Sends a HEAD request to the specified url
+    4.patch(url, data, args) = Sends a PATCH request to the specified url
+    5.post(url, data, json, args) = Sends a POST request to the specified url
+    6.put(url, data, args) = Sends a PUT request to the specified url
+    7.request(method, url, args) = Sends a request of the specified method to the specified url

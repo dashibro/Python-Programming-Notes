@@ -1,0 +1,247 @@
+# Tkinter in python
+  Tkinter is Python's standard library for creating Graphical User Interfaces (GUIs). It provides a simple way to build desktop applications
+  with windows, buttons, text fields, and other widgets. Tkinter is included with Python, so you don't need to install it separately.
+
+# Key Features of Tkinter:
+  1.Cross-Platform: Works on Windows, macOS, and Linux.
+  2.Widgets: Includes a variety of widgets like buttons, labels, text boxes, menus, etc.
+  3.Event-driven: Supports event handling for user interactions like button clicks or key presses.Customizable: Allows you to style and 
+                  configure widgets to suit your application's needs.
+# Some importent funtions:
+  1.Tk() = It the function that creats the main window.
+  2.mainloop() = It a funtion that starts the event loop for the application.it run the
+                 main window and keep it open and close it when "X" cross clicked
+
+# Functions to set size of the window:
+ 1.Geometery funtion:
+    It is funtion in tkinter use to give or adjust the size of the window
+    * Example = tkinter.Tk().geometry("653x555")
+  2.Minsize funtion:
+    It set the minimum size of the window:
+    * Example = tkinter.Tk().minsize(653,333)
+  3.Maxsize funtion:
+    It set the maximum size of a window:
+    *Example = tkinter.Tk().maxsize(1200,1000)
+  4.title function:
+    It gives title to the window.
+    * Example = tkinter.Tk().title("title_here")
+
+# Widgets in tkinter
+  Widghts are the building blocks of a graphical user interface.
+  like = buttons,lables,texts,checkboxes.
+
+# Some Widgets in tkinter:
+  
+  1.Label() = for text or images.
+    * Example = tkinter.Lable(root,text="Hello").pack()
+  2.Button() = for clickable buttons.
+    *Example =  entry = tkinter.Button(root,text="Click here")
+                entry.pack()
+  3.Entry(window_name) = single line text inputs.
+  * Example = entry = tkinter.Entry(root)
+              entry.pack()
+  4.Text()= for multiline input texts.
+  * Example = text = tkinter.Text(root, height=5, width=30)
+              text.pack()
+  5.Fram() = a container to group other widgets.
+   * Example = frame = tkinter.Frame(root)
+                frame.pack()
+  6.Canvas() = to draw shapes, imgages or custom graphics
+  * Example =   canvas = tkinter.Canvas(root, width=200, height=100)
+                 canvas.pack()
+                 canvas.create_rectangle(50, 20, 150, 80, fill="blue")
+  7.Checkbutton() = a checkbox.
+    * Example = check = tkinter.Checkbutton(root, text="Check me")
+                        check.pack()
+  8.Radiobutton() = a radio button for selecting one option from multiple options.
+    * Example = radio = tkinter.Radiobutton(root, text="Option 1", value=1)
+                radio.pack()
+  9.Listbox() = a list of selectable items
+    * Example = listbox = tkinter.Listbox(root)
+                listbox.pack()
+                listbox.insert(1, "Item 1")
+                listbox.insert(2, "Item 2")
+  10.Scal() = a slider to select numeric value.
+     * Example =  scale = tkinter.Scale(root, from_=0, to=100, orient="horizontal",tickinterval=5)
+                  scale.pack()
+  11.Menu() = A menubar for the application.
+     * Example = menu = tkinter.Menu(root)
+                root.config(menu=menu)
+                file_menu = tkinter.Menu(menu)
+                menu.add_cascade(label="File", menu=file_menu)
+                file_menu.add_command(label="Open")
+
+  12.Scarollbar() = a scrollbar for scolling content.
+      * Example = scrollbar = tkinter.Scrollbar(root)
+                  scrollbar.pack(side="right", fill="y")
+
+# Some importent Label options
+  1.text = to add text
+    Ex = Label(text="some string here")
+  2.bg = to set background
+    Ex = Label(bg="color")
+  3.fg = foreground
+    Ex = Label(fg="color")
+  4.font = sets the font
+    Ex = Label(font="font_name",font_size,"font_type")
+    Ex = Label(font="font_name font_size font_type")
+  5.padx = x padding(basically to extand the area for text)
+    Ex = Label(padx = number of size)
+  6.pady = y padding
+    Ex = Lable(pady = number of size)
+  7.relief = board styling - SUNKEN, RAISED, GROOVE, RIDGE
+  8.borderwidgth = to set border around the text area.
+    Ex = Label(borderwidgth=integer)
+
+# Image using lable
+  =>In order to use image in our window we use "Pillow module" also "PIL" 
+    Use the following steps to use image in the gui of tkinter.
+    ''' 
+    import tkinter as tk
+  from PIL import Image, ImageTk  # Import Pillow
+
+# Create the main window
+  root = tk.Tk()
+  root.title("Display JPG Image")
+
+# Open the JPG image using Pillow
+  image = Image.open("example.jpg")  # Replace with the path to your JPG file
+
+# Convert the image to a format usable by Tkinter
+  photo = ImageTk.PhotoImage(image)
+
+  # Display the image in a Label widget
+  label = tk.Label(root, image=photo)
+  label.pack()
+
+  root.mainloop()
+  '''
+
+  =>You can also resize the image using the following steps
+  '''
+  import tkinter as tk
+  from PIL import Image, ImageTk
+
+  root = tk.Tk()
+  root.title("Resized Image Example")
+
+# Open and resize the image
+  original_image = Image.open("example.jpg")  # Replace with your image path
+  resized_image = original_image.resize((300, 200))  # Adjust to 300x200 pixels (width x height)
+
+# Convert to Tkinter-compatible format
+  photo = ImageTk.PhotoImage(resized_image)
+
+# Display the resized image in a Label widget
+  '''
+  label = tk.Label(root, image=photo)
+  label.pack()
+
+  root.mainloop()
+'''
+
+# Some importent pack options
+  1.anchor = to shift the text to any direction
+    Ex = .pack(anchor="nw") //it means north east
+  2.side = to shift the text to any side like = right,left,up,button
+    Ex = .pack(side="button")
+  3.fill =  to fill the text to the end of the window X or Y //X and Y are axies
+   Ex = .pack(fill=X)
+  4.pad x and y = same as pad in lable attributes
+  5.expand = it weill provides expandiable space to the space
+             Ture = allocate extra space
+             False = don't allocate extra space
+    Ex = pack(expand=True or False)
+# Place() and grid() in tkinter
+place():
+  => you can use "place(x=,y=)" to adjust any text or imgae in tkinter on you desired position 
+grid():
+you can use grid "grid(row=,column=)" to place the text of image according to you need
+
+# Entry widget in tkinter
+  using this widget we can take user inputs, like (usernames and passwords) in tkinter
+  =>there are 4 types of variable in tkinter
+    1.StringVar
+    2.IntVar
+      Note = int is by Default 0 to it show 0 in entery to if you don't want 
+    3.BooleanVar
+    4.DoubleVar
+  =>you have to made variable to store entry value, to make variable:
+      var_name = StringVar()
+  =>if you wanna print the variable you have to use get():
+      print(var_name.get())// if you don't use that you'll get "PY_VAR0" name of variable
+
+
+#Events in tkinter
+=> Events in Tkinter are actions triggered by user interactions or system changes.You can handle events using the bind() method or by 
+associating events with widgets.Tkinter provides a wide range of events, including mouse clicks, key presses, and window changes.
+
+Event	                 |  Description
+___________________________________________________________________
+<Button-1>	           |  Left mouse button click
+<Button-2>	           |  Middle mouse button click
+<Button-3>	           |  Right mouse button click
+<Double-Button-1>      |  Double left mouse button click
+<KeyPress>	           |  Any key press
+<KeyRelease>	         |  Any key release
+<Return>	             |  Enter key press
+<Escape>               |  Escape key press
+<Motion>	             |  Mouse movement
+<FocusIn>              |	Widget gains focus
+<FocusOut>             |	Widget loses focus
+<Configure>            |	Window resize or configuration change
+<Enter>                |  When mouse enter in the purticular area
+<leave>                |  When mouse exit an purticular area
+
+# Menu and Submenu in tkingter
+  In Tkinter, you can create menus and submenus using the Menu widget. Menus are typically displayed at the top of the application window, 
+  and submenus are dropdown options under a menu item.
+
+  Types of Widgets in a Menu:
+
+  1.add_command():
+    Adds a simple menu item that performs an action when clicked.
+      Example: "New", "Open", "Save".
+      Example: file_menu.add_command(label="New", command=new_file)
+
+
+  2.add_separator()
+    Adds a horizontal line to separate groups of menu items.
+    Example = file_menu.add_separator()
+
+  3.add_checkbutton()
+    Adds a menu item with a checkbox that can be toggled on or off.
+      Example: "Enable Dark Mode".
+      Example = edit_menu.add_checkbutton(label="Enable Dark Mode", variable=dark_mode, command=toggle_dark_mode)
+
+  4.add_radiobutton():
+    Adds a menu item with a radio button, allowing the user to select one option from a group.
+      Example: "Font Size: Small, Medium, Large".
+      Example = view_menu.add_radiobutton(label="Small", variable=font_size, value="Small", command=set_font_size)
+
+  5.add_cascade():
+    Adds a submenu (dropdown) to the menu.
+    Example: A "File" menu with submenus like "New", "Open", etc.
+    Example = menu_bar.add_cascade(label="Help", menu=help_menu)
+
+  => To pack a menu widget we use "window_name.config(menu=menu_name)"
+
+# Message box in tkinter
+  In Tkinter, the messagebox module is used to display message boxes (pop-up dialogs) 
+  to the user. These message boxes are pre-built and can be used to show information, 
+  warnings, errors, or ask for user confirmation.
+
+  Function	                       |     Description
+  ___________________________________________________________________________________
+  1.showinfo(title, message)	       |     Displays an informational message box.
+  2.showwarning(title, message)	     |     Displays a warning message box.
+  3.showerror(title, message)	       |     Displays an error message box.
+  4.askquestion(title, message)	     |     Displays a question dialog box and returns 
+                                   |     "yes" or "no".
+  5.askokcancel(title, message)	     |     Displays a dialog box with "OK" and "Cancel"
+                                   |     buttons and returns True or False.
+  6.askyesno(title, message)	       |     Displays a dialog box with "Yes" and "No" 
+                                   |     buttons and returns True or False.
+  7.askretrycancel(title, message)	 |     Displays a dialog box with "Retry" and "Cancel" 
+                                   |     buttons and returns True or False.
+

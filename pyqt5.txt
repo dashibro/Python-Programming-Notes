@@ -1,0 +1,55 @@
+PyQt5 is a set of Python bindings for the Qt5 application framework, developed by Riverbank Computing.
+Qt itself is a C++ framework known for building cross-platform applications with beautiful and responsive GUIs.
+PyQt5 allows you to use Qt’s features directly in Python, making it easier to build apps without writing C++ code.
+
+# Qt designsiner:
+     A drag-and-drop tool to design interfaces visually, which can be converted into Python code.
+
+# Qt Modules:
+    Qt have a over 6000 functions and across 620+ classes used for doing different task and its not possible to write one by one,some of
+    the basic modules in pyqt5 is:
+    1.QtWigets: for buttons,lables,windows,etc.
+    2.QtCore: For core functionalities like timers, file handling, and threading.
+    3.QtGui: For graphics, fonts, and images.
+    [QtMultimedia, QtNetwork, QtSql, etc., for advanced features.]
+
+# Sample code in pyqt5:
+    import sys
+    from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLayout
+    from PyQt5.QtGui import QFont,QIcon
+
+    class MyWindow(QWidget):
+        def __init__(self):
+            super().__init__()
+            self.setWindowTitle("PyQt5 Class Example")
+            self.setWindowIcon(QIcon("file name"))
+            self.setGeometry(100, 100, 300, 200)  # x, y, width, height
+            self.setFont(QFront("Font_name",font_size))
+            self.adjustSize() # to adjusstsize the frame of the lable with the font_size
+            self.setStyleSheet("color:color_name or rgb_code") #to add some setStyle to the lable or anythingelse
+
+            self.initUI()
+
+        def initUI(self):
+            # Create widgets
+            self.label = QLabel("Hello, PyQt5!", self)
+            self.button = QPushButton("Click Me", self)
+
+            # Connect button click to a method
+            self.button.clicked.connect(self.on_click)
+
+            # Layout setup
+            layout = QVBoxLayout()
+            layout.addWidget(self.label)
+            layout.addWidget(self.button)
+            self.setLayout(layout)
+
+        def on_click(self):
+            self.label.setText("Button Clicked!")
+
+    if __name__ == "__main__":
+        app = QApplication(sys.argv)
+        window = MyWindow()
+        window.show()
+        sys.exit(app.exec_())
+

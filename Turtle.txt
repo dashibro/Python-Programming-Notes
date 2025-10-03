@@ -1,0 +1,46 @@
+#Introduction to turlte:
+    The turtle module in Python is a popular way to introduce programming to beginners, especially children, due to its simplicity and visual 
+    feedback. It is part of the standard Python library, which means it comes pre-installed with Python . The module provides a virtual canvas where 
+    you can command a turtle to draw shapes and patterns.
+
+#Key features of turtle:
+    Basic Commands:
+        Movement: You can move the turtle forward or backward by a specified distance using forward(distance) and backward(distance).
+        Turning: You can turn the turtle left or right by a specified angle using left(angle) and right(angle).
+        Pen Control: You can control the pen's state (up or down) with penup() and pendown(), which determines whether the turtle draws when it moves.
+        Drawing: You can draw shapes like circles with circle(radius).
+    Customization:
+        Speed: The turtle's speed can be adjusted with speed(speed), where speed is an integer from 0 (fastest) to 10 (slowest).
+        Color and Size: You can change the color of the pen with pencolor(color) and the fill color with fillcolor(color). 
+                        The pen size can be adjusted with pensize(size).
+
+#Function in turtle:
+    1.Turtle() = Creates and returns a new turtle object.
+    2.forward(int num) = Moves the turtle forward by the specified amount.
+    3.backward(int num) = Moves the turtle backward by the specified amount.
+    4.right(int angle) = Turns the turtle clockwise.
+    5.left(int angle) = Turns the turtle anticlockwise.
+    6.penup()/up() = Picks up the turtle’s Pen.
+    7.pundown()/down() = Puts down the turtle's pen.
+    8.color(string color) = Changes the color of turlte's pen.
+    9.fillcolor(string color) = its use to fill color in a shape.
+    10.position() = It returns the current position.
+    11.goto(int x,int y) = Move the turtle to the give position.
+    12.begin_fill() = It is used at the starting of the shape in which you want to fill color.
+    13.end_fill() = It is used at the end of the shape in which you want to fill color and fill is with color.
+    14.dot() = leaves a dot in current position.
+    15.shape(string shape-name) = makes a shape like "circle" at the current point.
+    16.bgcolor(string color) = set background color.
+    18.done() = It closes the turtle window manually.otherwise it closes it self.
+
+#Code for turtle:
+    '''
+    import turlte
+    t = turtle.Turtle.
+
+    t.forward(100)
+    t.backward(100)
+    t.left(90)
+    t.right(90)
+    turtle.done()
+    '''
