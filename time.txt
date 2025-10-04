@@ -1,0 +1,55 @@
+# Time Moudle in Python
+    The time module in Python is your go-to for working with time-related tasks—whether
+    you're measuring execution speed, adding delays,
+    or formatting timestamps.
+
+# Key Features:
+- Access the current time
+- Format and convert time values
+- Pause execution (like sleep)
+- Measure performance
+
+# Importent Funtions in Time Module:
+
+    # Get current time in seconds since epoch
+    time.time()
+
+    # Pause execution for given seconds
+    time.sleep(seconds)
+
+    # Convert seconds to readable string
+    time.ctime(secs)
+
+    # Convert seconds to UTC struct_time
+    time.gmtime(secs)
+
+    # Convert seconds to local struct_time
+    time.localtime(secs)
+
+    # Format struct_time to string
+    time.strftime(format, t)
+
+    # Parse string to struct_time
+    time.strptime(string, format)
+
+    # Convert struct_time to seconds since epoch
+    time.mktime(t)
+
+    # High-resolution performance counter
+    time.perf_counter()
+
+    # CPU time used by current process
+    time.process_time()
+
+    # Monotonic clock (never goes backward)
+    time.monotonic()
+
+
+# Example code:
+    import time
+
+    start = time.time()
+    time.sleep(1)
+    end = time.time()
+
+    print(f"Elapsed time: {end - start:.2f} seconds")
